@@ -1,0 +1,39 @@
+# Ignoruj foldery bin i obj
+bin/
+obj/
+
+# Pliki użytkownika Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignoruj konfiguracje specyficzne dla środowiska
+.vscode/
+.idea/
+*.vcxproj.user
+*.vcxproj.filters
+
+# Pliki tymczasowe systemowe
+.DS_Store
+Thumbs.db
+
+# Ignoruj pliki wygenerowane przez NuGet
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Ignoruj folder automatycznego przywracania NuGet
+.nuget/
+
+# Pliki generowane przez Visual Studio (vs, temp)
+.vs/
+*.pidb
+*.svclog
+*.log
+
+# Ignoruj konfiguracje lokalne
+appsettings.*.json
+launchSettings.json

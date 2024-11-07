@@ -1,0 +1,40 @@
+﻿<Window x:Class="KonkatyWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KonkatyWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Menu DockPanel.Dock="Top" Width="800" Background="DarkGray">
+            <MenuItem Header="Plik" Height="25" Width="60" FontSize="18" Margin="40,0,0,0">
+                <MenuItem Header="Nowy" Click="changeTable"/>
+                <MenuItem Header="Zamknij" Click="closeTable"/>
+            </MenuItem>
+            <MenuItem Header="Edycja" Height="25" Width="60" FontSize="18" Margin="20,0,0,0">
+                <MenuItem Header="Nowy kontakt" Click="addPerson"/>
+                <MenuItem Header="Edytuj kontakt" Click="editPerson"/>
+                <MenuItem Header="Usuń kontakt" Click="deletePerson"/>
+            </MenuItem>
+        </Menu>
+
+        <TextBox x:Name="searchBox" Text=""  HorizontalAlignment="Center" Margin="0,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="740" Height="24" TextChanged="searchValue"/>
+
+        <DataGrid x:Name="dataGrid" Margin="30,85,30,103" IsReadOnly="True">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Nowy kontakt" Click="addPerson"/>
+                    <MenuItem Header="Edytuj kontakt" Click="editPerson"/>
+                    <MenuItem Header="Usuń kontakt" Click="deletePerson"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+
+        <ProgressBar x:Name="progressBar" Margin="30,336,30,71" Height="30" Value="1"/>
+
+        <Button Content="&gt;" HorizontalAlignment="Left" Height="25" Margin="434,383,0,0" VerticalAlignment="Top" Width="25" FontSize="13" Click="nextPage"/>
+        <Button Content="&lt;" HorizontalAlignment="Left" Height="25" Margin="336,383,0,0" VerticalAlignment="Top" Width="25" FontSize="13" Click="previewPage"/>
+        <Label x:Name="pageLabel" Content="1" HorizontalAlignment="Center" Margin="0,378,0,0" VerticalAlignment="Top" FontSize="16" Height="35"/>
+    </Grid>
+</Window>
